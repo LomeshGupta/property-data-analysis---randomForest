@@ -67,7 +67,7 @@ all$Miscellaneous_Feature[is.na(all$Miscellaneous_Feature)] <- 'None'
 all$Miscellaneous_Feature <- as.factor(all$Miscellaneous_Feature)
 library(tidyverse)
 ggplot(all[!is.na(all$Sale_Price),], aes(x=Miscellaneous_Feature, y=Sale_Price)) +
-  geom_bar(stat='summary', fun.y = "median", fill='blue')
+  geom_bar(stat = "summary", data = all, fill = 'blue')
 
 #Lane_Type
 
@@ -76,7 +76,7 @@ all$Lane_Type[is.na(all$Lane_Type)] <- 'None'
 
 all$Lane_Type <- as.factor(all$Lane_Type)
 ggplot(all[!is.na(all$Sale_Price),], aes(x=Lane_Type, y=Sale_Price)) +
-  geom_bar(stat='summary', fun.y = "median", fill='blue')
+  geom_bar(stat = "summary", data = all, fill = 'blue')
 
 #fence quality
 
@@ -90,7 +90,7 @@ all[!is.na(all$Sale_Price),] %>%
 
 all$Fence_Quality <- as.factor(all$Fence_Quality)
 ggplot(all[!is.na(all$Sale_Price),], aes(x=Fence_Quality, y=Sale_Price))+
-  geom_bar(stat='summary', fun.y = "median", fill='blue')
+  geom_bar(stat = "summary", data = all, fill = 'blue')
 
 #Fireplace_Quality
 
